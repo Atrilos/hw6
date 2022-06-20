@@ -36,11 +36,6 @@ public class Main {
     }
 
     private static int[] generate() {
-        int[] arr = new int[30];
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = RNG.nextInt(100_000, 200_001);
-        }
-        return arr;
+        return IntStream.of(new int[30]).map(i -> RNG.nextInt(100_000, 200_001)).toArray();
     }
 }
